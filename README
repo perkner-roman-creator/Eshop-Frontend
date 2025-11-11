@@ -1,0 +1,23 @@
+# 🛒 E-shop Frontend
+
+**Jazyk:** TypeScript + React  
+**Build:** Vite
+
+## Spuštění
+
+1. Nainstalujte závislosti:
+   
+   npm install
+   
+2. Spusťte vývojový server:
+   
+   npm run dev
+   
+3. Otevřete http://localhost:5173
+
+## Funkce
+
+- Moderní UI pro e-shop
+- Připojení k backendu
+- Nákupní košík, detail produktu, recenze
+

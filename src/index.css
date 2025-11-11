@@ -1,0 +1,129 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Typo + témata */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  /* Globální šířky */
+  --wrap-max: 1200px;      /* úvodní stránka, listy */
+  --product-max: 1000px;   /* detail produktu – uprav dle chuti (např. 960px) */
+  --wrap-pad: 24px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a { color: #646cff; text-decoration: none; }
+a:hover { color: #535bf2; }
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover { border-color: #646cff; }
+button:focus, button:focus-visible { outline: 4px auto -webkit-focus-ring-color; }
+
+#root { width: 100%; min-height: 100vh; }
+
+main { padding: 0 var(--wrap-pad) 50px var(--wrap-pad); }
+
+/* Horní lišta – stejné rozměry jako na úvodní stránce */
+header { background: #fff; border-bottom: 1px solid #e5e7eb; }
+header > * {
+  width: min(var(--wrap-max), 100% - (var(--wrap-pad) * 2));
+  margin-inline: auto;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Výchozí šířka obsahu (listy, homepage, atd.) */
+main > *,
+.container,
+.wrap,
+.page,
+.page-content,
+.content {
+  width: min(var(--wrap-max), 100% - (var(--wrap-pad) * 2));
+  margin-inline: auto;
+}
+
+/* DETAIL PRODUKTU – zúžení pro všechny produktové stránky */
+.product-detail,
+.product-detail-card,
+.product,
+.product-page,
+section.product,
+article.product,
+.product-header,
+.product-content,
+.product-reviews,
+.reviews,
+.review-list {
+  width: min(var(--product-max), 100% - (var(--wrap-pad) * 2)) !important;
+  margin-inline: auto !important;
+}
+
+/* Pokud detail není označen třídou, chytneme „velkou kartu“ hned v mainu */
+main > div:has(.product-price, .product-actions),
+main > section:has(.product-price, .product-actions) {
+  width: min(var(--product-max), 100% - (var(--wrap-pad) * 2));
+  margin-inline: auto;
+}
+
+/* „Karta“ detailu */
+.product-detail-card,
+.product,
+.product-page,
+section.product,
+article.product {
+  padding: 24px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+/* Obrázek v detailu – menší výška, zachovat poměr */
+.product-detail img,
+.product-page img,
+.product-detail-card img,
+.product img,
+section.product img,
+article.product img {
+  max-height: 520px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+
+@media (max-width: 960px) {
+  header > * { min-height: 56px; gap: 12px; }
+  .product-detail img,
+  .product-page img,
+  .product-detail-card img,
+  .product img { max-height: 360px; }
+}
+
+/* Schovej jakýkoli zbylý odkaz/tlačítko na /admin */
+a[href*="/admin"],
+button[data-route*="admin"] { display: none !important; }
