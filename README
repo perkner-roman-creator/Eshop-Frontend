@@ -15,9 +15,14 @@
    
 3. Otevřete http://localhost:5173
 
-## Funkce
+Tento projekt je moderní e-shop s webovým rozhraním, který umožňuje:
 
-- Moderní UI pro e-shop
-- Připojení k backendu
-- Nákupní košík, detail produktu, recenze
+-Prohlížet produkty s detailními informacemi, obrázky a recenzemi
+-Filtrovat a vyhledávat produkty podle názvu, kategorie a dalších parametrů
+-Přidávat produkty do košíku a dokončit objednávku
+-Hodnotit produkty a psát recenze
+-Zobrazit historii objednávek
+-Využít zákaznickou podporu (chatbot)
+
+Backend je postaven na Node.js s databází (Prisma), frontend na Reactu/TypeScriptu. Je to ukázka plně funkčního (amatérského) internetového obchodu s moderními funkcemi a přehledným designem.
 
